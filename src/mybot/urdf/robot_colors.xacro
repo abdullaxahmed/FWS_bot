@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mybot">
+
+     <!-- Color Reference -->
+    <gazebo reference="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo> 
+
+    <gazebo reference="front_left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo> 
+    <gazebo reference="front_right_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo> 
+    <gazebo reference="rear_left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo> 
+    <gazebo reference="rear_right_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo> 
+    <gazebo reference="lidar_holder">
+        <material>Gazebo/Black</material>
+    </gazebo> 
+    <gazebo reference="lidar">
+        <material>Gazebo/Red</material>
+    </gazebo> 
+
+    <!-- Material Color -->
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material> 
+
+
+</robot>

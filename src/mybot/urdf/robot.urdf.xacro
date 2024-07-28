@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mybot">
+
+    <xacro:include filename="$(find mybot)/urdf/skid_steering.xacro" />
+    <xacro:include filename="$(find mybot)/urdf/robot_colors.xacro" />
+    <xacro:include filename="$(find mybot)/urdf/lidar.xacro" /> 
+
+    <!-- Wheels -->
+    <xacro:macro name="wheel" params="prefix x y rpy axis">
+        <joint name="${prefix}_wheel_joint" type="continuous">
+            <parent link="base_link"/>
+            <child link="${prefix}_wheel"/>
+            <origin xyz="${x} ${y} 0" rpy="${rpy} 0 0"/>
+            <axis xyz="${axis}"/>
+        </joint>
+
+        <link name="${prefix}_wheel">
+            <visual>
+                <geometry>
+                    <cylinder radius="0.2" length="0.1"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder radius="0.2" length="0.1"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="1.0"/>
+                <inertia ixx="0.01083" ixy="0.0" ixz="0.0" iyy="0.01083" iyz="0.0" izz="0.02"/>
+            </inertial>
+        </link>
+    </xacro:macro>
+
+    <xacro:wheel prefix="front_left" x="0.225" y="0.3" rpy="-1.5708" axis="0 0 1"/>
+    <xacro:wheel prefix="front_right" x="0.225" y="-0.3" rpy="1.5708" axis="0 0 -1"/>
+    <xacro:wheel prefix="rear_left" x="-0.225" y="0.3" rpy="-1.5708" axis="0 0 1"/>
+    <xacro:wheel prefix="rear_right" x="-0.225" y="-0.3" rpy="1.5708" axis="0 0 -1"/>
+
+    <!-- footprint -->
+    <link name="robot_footprint"/>
+    <joint name="robot_footprint_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="robot_footprint" />
+        <child link="base_link" />    
+    </joint>
+
+    <!-- BASE LINK -->
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5708"/>
+            <mass value="15.0"/>
+            <inertia ixx="0.725" ixy="0.0" ixz="0.0" iyy="0.425" iyz="0.0" izz="0.925"/>
+        </inertial>
+        <visual name="base_link">
+            <geometry>
+                <box size="0.7 0.5 0.3"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="blue">
+                <color rgba="0.2 0.2 1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.7 0.5 0.3"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </collision>
+    </link>
+
+    
+    
+    <!-- lidar_holder -->
+    <joint name="lidar_holder_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar_holder"/>
+        <origin xyz="0.0 0 0.175" rpy="0 0 0"/>
+    </joint>
+    <link name="lidar_holder">
+        <visual>
+            <geometry>
+                <box size="0.125 0.125 0.125"/>
+            </geometry>
+            <material name="blue">
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.125 0.125 0.125"/>
+            </geometry>
+        </collision>
+    </link>
+
+</robot>
