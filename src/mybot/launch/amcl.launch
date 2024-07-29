@@ -1,11 +1,11 @@
 <launch>
   <!-- Map Server -->
-  <arg name="map_file" default="$(find mybot)/maps/map.yaml"/>
+  <arg name="map_file" default="$(find mybot)/maps/map3.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
 
-  <arg name="robot_init_x" default="0"/>
-  <arg name="robot_init_y" default="0"/>
+  <arg name="robot_init_x" default="2"/>
+  <arg name="robot_init_y" default="2"/>
   <arg name="robot_init_phi" default="0"/>
 
   <!-- AMCL Node -->
