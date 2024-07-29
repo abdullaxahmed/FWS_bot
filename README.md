@@ -27,9 +27,14 @@ FWS_bot/
  └── src/
       └── mybot/
             ├── config/
-            |   └── mybot.rviz
+            │    └── mybot.rviz
+            ├── images/
+            │   ├── Robot_Navigation.gif
+            │   ├── gazebo_world.png
+            │   ├── robot.png
+            │   └── rviz_map.png
             ├── launch/
-            |   ├── all.launch
+            │   ├── all.launch
             │   ├── amcl.launch
             │   ├── cmd_vel.launch
             │   ├── move_base.launch
@@ -42,19 +47,19 @@ FWS_bot/
             │   ├── map2.pgm
             │   └── map2.yaml
             ├── param/
-            |   ├── base_local_planner_params.yaml
-            |   ├── costmap_common_params.yaml
-            |   ├── global_costmap_params.yaml
-            |   └── local_costmap_params.yaml
+            │   ├── base_local_planner_params.yaml
+            │   ├── costmap_common_params.yaml
+            │   ├── global_costmap_params.yaml
+            │   └── local_costmap_params.yaml
             ├── scripts/
-            |   └── cmd_vel.py
+            │    └── cmd_vel.py
             ├── urdf/
             │   ├── lidar.xacro
             │   ├── robot.urdf.xacro
             │   ├── robot_colors.xacro
             │   └── skid_steering.xacro
             ├── worlds/
-            |   └── myworld.world
+            │    └── myworld.world
             ├── CMakeLists.txt
             ├── package.xml
             └── README.md
@@ -72,13 +77,13 @@ Before running the project, ensure you have the following dependencies installed
 
 
 ```bash
- $ sudo apt-get update
+sudo apt-get update
 
- $ sudo apt-get install ros-noetic-gmapping
+sudo apt-get install ros-noetic-gmapping
 
- $ sudo apt-get install ros-noetic-move-base
+sudo apt-get install ros-noetic-move-base
 
- $ sudo apt-get install ros-noetic-amcl
+sudo apt-get install ros-noetic-amcl
 ```
 
 ## Running Instructions
@@ -86,21 +91,21 @@ To start the robot with all necessary nodes, use the following commands:
 
 **Step 1:** Clone the Project
 ```bash
-$ git clone https://github.com/abdullaxahmed/FWS_bot.git
+git clone https://github.com/abdullaxahmed/FWS_bot.git
 
-$ cd FWS_bot
+cd FWS_bot
 ```
 **Step 2:** Build the Workspace
 ```bash
-$ catkin_make
+catkin_make
 ```
 **Step 3:** Sourcing the Workspace
 ```bash
-$ source devel/setup.bash
+source devel/setup.bash
 ```
 **Step 4:** Launching the Project
 
 ```bash
-$ roslaunch mybot all.launch
+roslaunch mybot all.launch
 ```
 
