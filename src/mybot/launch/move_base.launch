@@ -15,13 +15,15 @@
 
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
     <param name="base_global_planner" value="navfn/NavfnROS"/>
-    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
-
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+    
     <rosparam file="$(find mybot)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find mybot)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find mybot)/param/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find mybot)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find mybot)/param/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find mybot)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find mybot)/param/dwa_local_planner_params.yaml" command="load" />
+
   </node>
 
 </launch>

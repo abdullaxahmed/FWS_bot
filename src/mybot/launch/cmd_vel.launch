@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Run your skid steering controller node -->
-    <node name="move_robot_node" pkg="mybot" type="cmd_vel.py" output="screen" />
-</launch>

@@ -11,7 +11,7 @@
 
 
     <!-- Arguments -->
-    <arg name="world" default="$(find mybot)/worlds/world2.world"/>
+    <arg name="world" default="$(find mybot)/worlds/myworld.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>

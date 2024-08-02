@@ -3,7 +3,7 @@
     
   <include file="$(find mybot)/launch/gazebo.launch"/>
 
-  <include file="$(find mybot)/launch/rviz2.launch"/>
+  <include file="$(find mybot)/launch/rviz.launch"/>
 
   <include file="$(find mybot)/launch/amcl.launch"/>
 
