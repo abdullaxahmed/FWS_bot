@@ -81,7 +81,7 @@ sudo apt-get update
 
 sudo apt-get install ros-noetic-gmapping
 
-sudo apt-get install ros-noetic-move-base
+sudo apt-get install ros-noetic-navigation
 
 sudo apt-get install ros-noetic-amcl
 ```
