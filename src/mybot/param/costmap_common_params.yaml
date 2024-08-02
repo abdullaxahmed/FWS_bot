@@ -1,18 +1,23 @@
 map_type: costmap
 
+obstacle_range: 3.0
+raytrace_range: 7.0
 
-obstacle_range: 4.0 # 2.0
-raytrace_range: 5.0 # 3.0
+robot_radius: 0.45
+footprint_padding: 0.01
 
-transform_tolerance: 0.2 # 0.0
+transform_tolerance: 0.2
 
-robot_radius: 0.2 # 0.0 was 0.2
-inflation_radius: 0.9 # 0.9
-cost_scaling_factor: 10.0 #defualt 10 was 5
+obstacle_layer_scan:
+ enabled: true
+ max_obstacle_height: 2.0 
+ combination_method: 1
+ track_unknown_space: true
+ footprint_clearing_enabled: true 
 
-observation_sources: laser_scan_sensor
 
-laser_scan_sensor: {sensor_frame: lidar, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
+ observation_sources: laser_scan_sensor
+ laser_scan_sensor: {sensor_frame: lidar, data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
 
 
