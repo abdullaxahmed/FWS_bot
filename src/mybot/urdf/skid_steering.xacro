@@ -13,7 +13,7 @@
             <wheelSeparation>0.6</wheelSeparation>
             <wheelDiameter>0.4</wheelDiameter>
             <robotBaseFrame>robot_footprint</robotBaseFrame>
-            <torque>30</torque>
+            <torque>50</torque>
             <topicName>cmd_vel</topicName>
             <broadcastTF>true</broadcastTF>
      
