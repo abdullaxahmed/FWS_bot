@@ -36,21 +36,19 @@ FWS_bot/
             ├── launch/
             │   ├── all.launch
             │   ├── amcl.launch
-            │   ├── cmd_vel.launch
+            │   ├── gazebo.launch
             │   ├── move_base.launch
             │   ├── mybot_gmapping.launch
-            │   ├── rviz.launch
-            │   └── simplemap.launch
+            │   └── rviz.launch
             ├── maps/
             │   ├── map.pgm
-            │   ├── map.yaml
-            │   ├── map2.pgm
-            │   └── map2.yaml
+            │   └── map.yaml
             ├── param/
-            │   ├── base_local_planner_params.yaml
+            │   ├── dwa_local_planner_params.yaml
             │   ├── costmap_common_params.yaml
             │   ├── global_costmap_params.yaml
-            │   └── local_costmap_params.yaml
+            │   ├── local_costmap_params.yaml
+            │   └── move_base_params.yaml
             ├── scripts/
             │    └── cmd_vel.py
             ├── urdf/
